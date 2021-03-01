@@ -5,6 +5,7 @@
  <meta charset="UTF-8">
  <title>doubleJ</title>
  <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
+ <script src="https://kit.fontawesome.com/4aec5a2ee3.js" crossorigin="anonymous"></script>
 </head>
     
 <body>
@@ -34,20 +35,51 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">Log In</a>
+      </li>
     </ul>
   </div>
  </div>
 </nav>
+
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel"><i class="fas fa-dolly-flatbed"></i>&nbsp Log In</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <div CLASS="row">
+        <div class="col-md-6">
+         <button type="button" class="btn btn-outline-primary btn-block btn-sm"><i class="fab fa-google"></i>&nbsp Log In with Google</button>
+         <button type="button" class="btn btn-outline-dark btn-block btn-sm"><i class="fas fa-envelope"></i>&nbsp Log In with E-mail</button>
+        </div>
+        <div class="col-md-6">
+         <button type="button" class="btn btn-outline-success btn-block btn-sm"><i class="far fa-envelope"></i>&nbsp Sign Up with E-mail</button>
+        </div>  
+       </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
  
 <!---Page Content--->
-<div class="container my-3">
+<div class="container my-5">
 
  <div class="row">
   
   <!---Blog Entries Column--->
   <div class="col-md-8 col-lrg-9">
    
-   <h1 class="my-5">BLOG</h1>
+   <h1 class="my-3">BLOG</h1>
 
     <!---Blog Post--->
     {% for p in post_list %}  
