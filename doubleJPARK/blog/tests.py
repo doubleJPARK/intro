@@ -4,12 +4,9 @@ from .models import Post
 
 
 class TestView(TestCase):
-    def setup(self):
+    def setUp(self):
         self.client = Client()
     
     
     def test_post_list(self):
-        #
-        #
-        #
-        
+        # 테스트거리 작성
