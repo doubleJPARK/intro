@@ -8,5 +8,17 @@ class TestView(TestCase):
         self.client = Client()
     
     
-    def test_post_list(self):
-        # 테스트거리 작성
+    def navbar_test(self, soup):
+        navbar = soup.nav
+        self.assertIn('BLOG', navbar.text)
+        self.assertIn('About_doubleJ', navbar.text)
+        
+        
+        logo_btn = navbar.find('a', text='HOME')
+        self.assertEqual(logo_btn.attrs['href'], '/')
+        
+        logo_btn = navbar.find('a', text='About_doubleJ')
+        self.assertEqual(logo_btn.attrs['href'], '/about_me/')
+        
+        logo_btn = navbar.find('a', text='BLOG')
+        self.assertEqual(logo_btn.attrs['href'], '/blog/')
