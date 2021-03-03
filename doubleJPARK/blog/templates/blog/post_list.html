@@ -85,11 +85,15 @@
  <div class="row">
   
   <!---Blog Entries Column--->
-  <div class="col-md-8 col-lrg-9">
+  <div class="col-md-8 col-lrg-9" id="main-area">
    
    <h1 class="my-4">BLOG</h1>
 
+    
+    {% if post_list.exists %}
+    
     <!---Blog Post--->
+     
     {% for p in post_list %}  
      <div class="card mb-4">
       {% if p.head_image %}
@@ -111,6 +115,9 @@
       </div>
      </div>
     {% endfor %}
+    {% else %}
+      <h3>아직 게시물이 없습니다.</h3>
+    {% endif %}
      <!-- Pagination -->
      <ul class="pagination justify-content-center mb-4">
       <li class="page-item">
