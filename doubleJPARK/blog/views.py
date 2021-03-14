@@ -164,6 +164,17 @@ class CommentUpdate(LoginRequiredMixin, UpdateView):
             raise PermissionDenied
 
 
+def delete_comment(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    post = comment.post
+    if request.user.is_authenticated and request.user == comment.author:
+        comment.delete()
+        return redirect(post.get_absolute_url())
+    else:
+        raise PermissionDenied
+
+
+
 # FBV 스타일 코드임 아마 앞으로 안 쓸것 같음
 # def index(request):
 #    posts = Post.objects.all().order_by('-pk')
