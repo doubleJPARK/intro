@@ -4,11 +4,13 @@ body {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
     -o-background-size: cover;
 }
 
 section (
-    margin-bottom: 150px;
+    margin-bottom: 250px;
 )
 
 .card {
